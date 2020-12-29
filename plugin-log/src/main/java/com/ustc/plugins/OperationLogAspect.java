@@ -6,7 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.ustc.plugins.annotation.Log;
 import com.ustc.plugins.model.LogInfo;
 import com.ustc.plugins.service.ILogService;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.log4j.Log4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -35,7 +35,7 @@ import java.util.*;
  */
 @Aspect
 @Order(1)
-@Log4j2
+@Log4j
 public class OperationLogAspect {
 
     @Autowired
