@@ -28,5 +28,7 @@ public enum OperType {
     //上传
     UPLOAD,
     //业务处理
-    BUSINESS
+    BUSINESS,
+    //业务处理
+    DEAL
 }

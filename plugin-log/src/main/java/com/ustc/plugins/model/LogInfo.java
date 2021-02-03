@@ -20,6 +20,11 @@ import java.util.Date;
 public class LogInfo {
 
     /**
+     * id
+     */
+    private String id;
+
+    /**
      * 操作员
      */
     private String operator;

@@ -94,12 +94,19 @@ public class OperationLogAspect {
         Object result = null;
         try {
             result = point.proceed();
-            String response = JSONObject.toJSONString(result);
-            int length = 3000;
-            if (response.length() > length) {
-                response = response.substring(0, length);
+            if (!annotation.operType().equals(OperType.QUERY)) {
+                String response;
+                if (result instanceof String) {
+                    response = result.toString();
+                } else {
+                    response = JSONObject.toJSONString(result);
+                }
+                int length = 3000;
+                if (response.length() > length) {
+                    response = response.substring(0, length);
+                }
+                logInfo.setResponse(response);
             }
-            logInfo.setResponse(response);
         } catch (Exception e) {
             log.error(logInfo.getOperate() + "出错！" + e.getMessage(), e);
             logInfo.setResponse(e.getMessage());

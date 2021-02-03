@@ -21,6 +21,7 @@
         <module>plugin-excel</module>
         <module>plugin-pagehelper</module>
         <module>plugin-log</module>
+        <module>plugin-rabbitmq</module>
     </modules>
 
     <properties>
