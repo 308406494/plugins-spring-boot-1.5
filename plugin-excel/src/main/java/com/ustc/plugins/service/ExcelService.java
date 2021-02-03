@@ -612,7 +612,7 @@ public class ExcelService {
                 Method method = aClass.getMethod(getMethodName);
                 titleInfo.setGetMethod(method);
                 String setMethodName = "set" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
-                Method setMethod = aClass.getMethod(setMethodName, String.class);
+                Method setMethod = aClass.getMethod(setMethodName, field.getType());
                 titleInfo.setSetMethod(setMethod);
                 if (!StringUtils.isEmpty(annotation.hyperlink())) {
                     HyperLinkStyle style = (HyperLinkStyle) applicationContext.getBean(annotation.hyperlink());

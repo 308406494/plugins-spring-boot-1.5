@@ -22,7 +22,7 @@ import java.lang.annotation.*;
 public @interface Excel {
 
     //读取标题的类型
-    TitleEnum type();
+    TitleEnum type() default TitleEnum.title;
 
     //标题的行数
     int titleRow() default 0;
