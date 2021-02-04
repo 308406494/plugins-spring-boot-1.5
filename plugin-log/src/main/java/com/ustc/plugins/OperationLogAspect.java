@@ -71,6 +71,7 @@ public class OperationLogAspect {
         logInfo.setOperType(annotation.operType().toString());
         logInfo.setOperate(annotation.value());
         Map map = request.getParameterMap();
+        log.info(logInfo.getOperate() + "\t" + annotation.value());
         String queryString;
         if (map.isEmpty()) {
             queryString = request.getQueryString();

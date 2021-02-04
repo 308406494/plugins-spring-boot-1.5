@@ -194,7 +194,7 @@ public class RedisServiceImpl implements IRedisService {
      */
     @Override
     public String get(TYPE type, String key) {
-        return redisTemplate.opsForValue().get(type + SPLIT + key).toString();
+        return (String) redisTemplate.opsForValue().get(type + SPLIT + key);
     }
 
     /**
